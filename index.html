@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Wings Charity - Empowering Communities Through Compassion</title>
+    <meta name="description" content="Global Wings Charity is dedicated to empowering underprivileged children through education and providing relief to disaster-affected communities.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#7c3aed',
+                        accent: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(124, 58, 237, 0.95) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .image-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        
+        .image-overlay > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Stats Counter Animation */
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .stat-number {
+            animation: countUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900">
+    
+    <!-- Top Bar -->
+    <div class="bg-gradient-to-r from-primary to-secondary text-white py-2 hidden md:block">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-6">
+                    <a href="mailto:secretary@globalwingscharity.org" class="flex items-center hover:text-gray-200 transition">
+                        <i class="fas fa-envelope mr-2"></i>
+                        secretary@globalwingscharity.org
+                    </a>
+                    <a href="tel:+94774832167" class="flex items-center hover:text-gray-200 transition">
+                        <i class="fas fa-phone mr-2"></i>
+                        +94 77 483 2167
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-xs">Follow Us:</span>
+                    <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                        <i class="fas fa-dove text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Global Wings</h1>
+                        <p class="text-xs text-gray-600">Charity</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium transition">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium transition">About</a>
+                    <a href="#causes" class="nav-link text-gray-700 hover:text-primary font-medium transition">What We Do</a>
+                    <a href="#team" class="nav-link text-gray-700 hover:text-primary font-medium transition">Our Team</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary font-medium transition">Gallery</a>
+                    <a href="#news" class="nav-link text-gray-700 hover:text-primary font-medium transition">News</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium transition">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:block">
+                    <a href="#donate" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        <i class="fas fa-heart mr-2"></i>Donate Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu lg:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition py-2">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition py-2">About</a>
+                    <a href="#causes" class="text-gray-700 hover:text-primary font-medium transition py-2">What We Do</a>
+                    <a href="#team" class="text-gray-700 hover:text-primary font-medium transition py-2">Our Team</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary font-medium transition py-2">Gallery</a>
+                    <a href="#news" class="text-gray-700 hover:text-primary font-medium transition py-2">News</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition py-2">Contact</a>
+                    <a href="#donate" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold text-center">
+                        <i class="fas fa-heart mr-2"></i>Donate Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background with overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+        </div>
+        
+        <!-- Animated shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="animate-fade-in">
+                    <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Empowering Lives Through
+                        <span class="block text-yellow-300">Compassion & Action</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+                        Join us in creating a world where education, relief, and hope reach every corner. Together, we can transform lives.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#causes" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                            Explore Our Causes
+                        </a>
+                        <a href="#donate" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                            <i class="fas fa-heart mr-2"></i>Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 transform hover:scale-105 transition">
+                        <div class="stat-number text-4xl font-bold text-yellow-300">500+</div>
+                        <div class="text-sm text-gray-200 mt-2">Families Helped</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 transform hover:scale-105 transition">
+                        <div class="stat-number text-4xl font-bold text-yellow-300">1000+</div>
+                        <div class="text-sm text-gray-200 mt-2">Children Educated</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 transform hover:scale-105 transition">
+                        <div class="stat-number text-4xl font-bold text-yellow-300">50+</div>
+                        <div class="text-sm text-gray-200 mt-2">Projects Completed</div>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 transform hover:scale-105 transition">
+                        <div class="stat-number text-4xl font-bold text-yellow-300">100+</div>
+                        <div class="text-sm text-gray-200 mt-2">Active Volunteers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Column -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Global Wings Charity" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-gray-900">10K+</div>
+                                <div class="text-sm text-gray-600">Lives Impacted</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div>
+                    <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        About Us
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Building a <span class="text-gradient">Better Tomorrow</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        At the heart of our mission lies a simple yet powerful goal: to provide immediate relief to those affected by disasters and empower underprivileged children through education.
+                    </p>
+
+                    <!-- Vision & Mission Cards -->
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-eye text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Our Vision</h3>
+                                    <p class="text-gray-600">
+                                        The alleviation of poverty, education for all, and provision of basic amenities for those in need; creating a world where charity and compassion produce justice, self-reliance, and human development.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-bullseye text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Our Mission</h3>
+                                    <p class="text-gray-600">
+                                        Dedicated to empowering underprivileged children through education. We provide essential resources such as books, stationery, and scholarships, integrating digital learning tools and vocational training.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        Become a Volunteer
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section id="causes" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Our Causes
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    What We <span class="text-gradient">Stand For</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Long-term recovery requires sustainable livelihoods. We support individuals and families in rebuilding their lives.
+                </p>
+            </div>
+
+            <!-- Causes Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cause 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600" alt="Education Support" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-book-reader text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Education Support</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Providing books, stationery, and scholarships to underprivileged children, ensuring every child has the opportunity to learn and grow.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style="width: 75%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $45,000</span>
+                            <span>Goal: $60,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cause 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600" alt="Healthcare Assistant" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-heartbeat text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Healthcare Assistant</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Delivering essential medical supplies and healthcare services to communities in need, ensuring access to basic health facilities.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-green-400 to-blue-500 h-full rounded-full" style="width: 60%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $30,000</span>
+                            <span>Goal: $50,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cause 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600" alt="Permanent Houses" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-home text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Permanent Houses</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Building safe and sustainable homes for families affected by disasters, providing them with security and dignity.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-full rounded-full" style="width: 45%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $22,500</span>
+                            <span>Goal: $50,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cause 4 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=600" alt="Dry Ration Packs" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Urgent
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-box text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Dry Ration Packs</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Distributing essential food supplies to families facing economic hardships, ensuring no one goes hungry.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-red-400 to-pink-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $34,000</span>
+                            <span>Goal: $40,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cause 5 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=600" alt="Sustainable Livelihood" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-briefcase text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Sustainable Livelihood</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Empowering communities with vocational training and resources to create sustainable income sources.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-green-400 to-teal-500 h-full rounded-full" style="width: 55%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $27,500</span>
+                            <span>Goal: $50,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cause 6 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600" alt="Religious Events" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <i class="fas fa-hands-helping text-primary text-xl"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Religious Events</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Supporting community celebrations and religious events that bring people together and strengthen bonds.
+                        </p>
+                        <div class="bg-gray-100 rounded-full h-3 mb-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-purple-400 to-indigo-500 h-full rounded-full" style="width: 70%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600 mb-4">
+                            <span>Raised: $21,000</span>
+                            <span>Goal: $30,000</span>
+                        </div>
+                        <a href="#donate" class="block text-center bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                            Donate Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Meet Our Team
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Our <span class="text-gradient">Dedicated Volunteers</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Meet the passionate individuals who make our mission possible through their dedication and hard work.
+                </p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Soma Gobikishan" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 hover:opacity-100 transition duration-300">
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <div class="flex space-x-3 justify-center">
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Soma Gobikishan</h3>
+                        <p class="text-primary font-semibold">Founder</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Mohamed Nifras" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 hover:opacity-100 transition duration-300">
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <div class="flex space-x-3 justify-center">
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Mohamed Nifras</h3>
+                        <p class="text-primary font-semibold">Legal Officer</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400" alt="Warren Perera" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 hover:opacity-100 transition duration-300">
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <div class="flex space-x-3 justify-center">
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Warren Perera</h3>
+                        <p class="text-primary font-semibold">Director</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="Musthaffa Mohamed" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 hover:opacity-100 transition duration-300">
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <div class="flex space-x-3 justify-center">
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Musthaffa Mohamed</h3>
+                        <p class="text-primary font-semibold">Secretary</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                    Join Our Team
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Testimonials
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Stories from <span class="text-gradient">the Heart</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Hear from the people whose lives we've touched and the volunteers who make it all possible.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-quote-left text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            "The support we received after the disaster was life-changing. When everything was lost, the kindness and quick response from this organization gave us hope and a path forward."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Testimonial" class="w-14 h-14 rounded-full object-cover">
+                            <div>
+                                <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600">Beneficiary</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-quote-left text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            "From food and shelter to emotional support, they stood by us every step of the way. Thanks to their efforts, my family was able to rebuild not only our home but our future."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Testimonial" class="w-14 h-14 rounded-full object-cover">
+                            <div>
+                                <h4 class="font-bold text-gray-900">David Martinez</h4>
+                                <p class="text-sm text-gray-600">Volunteer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 relative">
+                    <div class="absolute -top-4 left-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-quote-left text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            "Being part of this organization has been incredibly fulfilling. Seeing the impact we make in people's lives motivates me every day to do more and give back to the community."
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Testimonial" class="w-14 h-14 rounded-full object-cover">
+                            <div>
+                                <h4 class="font-bold text-gray-900">Emily Chen</h4>
+                                <p class="text-sm text-gray-600">Volunteer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Our Gallery
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    The Frontlines of <span class="text-gradient">Relief</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    These images showcase the importance of our organization's work through powerful visuals and moments.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="relative group overflow-hidden rounded-2xl h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600" alt="Gallery" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-search-plus text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News/Blog Section -->
+    <section id="news" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Latest News
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Stories of Relief and <span class="text-gradient">Recovery</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Stay updated with our latest projects, success stories, and community impact initiatives.
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600" alt="Teacher's Day" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-3">
+                            <span class="flex items-center">
+                                <i class="far fa-calendar mr-2 text-primary"></i>
+                                26 October 2024
+                            </span>
+                            <span class="flex items-center">
+                                <i class="far fa-user mr-2 text-primary"></i>
+                                Admin
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition">
+                            Teacher's Day Celebration
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Thirukkovil Zone hosts Teacher's Day celebration and honors long-serving pre-school teachers in a heartfelt ceremony.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?w=600" alt="Covid Ward" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-3">
+                            <span class="flex items-center">
+                                <i class="far fa-calendar mr-2 text-primary"></i>
+                                08 June 2024
+                            </span>
+                            <span class="flex items-center">
+                                <i class="far fa-user mr-2 text-primary"></i>
+                                Admin
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition">
+                            Built a Covid Ward Unit
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Another project was successfully launched on 9th of November 2021. Our event was very successful in supporting healthcare infrastructure.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=600" alt="Dry Ration" class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-3">
+                            <span class="flex items-center">
+                                <i class="far fa-calendar mr-2 text-primary"></i>
+                                08 June 2023
+                            </span>
+                            <span class="flex items-center">
+                                <i class="far fa-user mr-2 text-primary"></i>
+                                Admin
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition">
+                            Distributed 500 Dry Ration Packs
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Sri Lanka continues to experience an unprecedented economic crisis with high inflation. We distributed essential supplies to families in need.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-primary font-semibold hover:underline">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        Get In Touch
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Let's Make a <span class="text-gradient">Difference Together</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Have questions or want to get involved? We'd love to hear from you. Reach out to us through any of the following channels.
+                    </p>
+
+                    <!-- Contact Cards -->
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Our Location</h4>
+                                    <p class="text-gray-600">No: 104, Rajawatta, Terrace Rajamawatha, Ja ela, Sri Lanka</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Phone Numbers</h4>
+                                    <p class="text-gray-600">+94 077 483 2167</p>
+                                    <p class="text-gray-600">+44 75 1359 2782</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Email Address</h4>
+                                    <p class="text-gray-600">secretary@globalwingscharity.org</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition shadow-md">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition shadow-md">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition shadow-md">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition shadow-md">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="John Doe" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="john@example.com" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="+94 77 123 4567">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Tell us how we can help..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate CTA Section -->
+    <section id="donate" class="py-20 bg-gradient-to-br from-primary via-secondary to-purple-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    Your Donation Changes Lives
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    Every contribution brings hope to families and communities in need. Join us in making a lasting impact today.
+                </p>
+                
+                <!-- Donation Amount Buttons -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <button class="bg-white bg-opacity-20 backdrop-blur-lg hover:bg-opacity-30 text-white py-4 rounded-xl font-bold text-lg transition">
+                        $25
+                    </button>
+                    <button class="bg-white bg-opacity-20 backdrop-blur-lg hover:bg-opacity-30 text-white py-4 rounded-xl font-bold text-lg transition">
+                        $50
+                    </button>
+                    <button class="bg-white bg-opacity-20 backdrop-blur-lg hover:bg-opacity-30 text-white py-4 rounded-xl font-bold text-lg transition">
+                        $100
+                    </button>
+                    <button class="bg-white bg-opacity-20 backdrop-blur-lg hover:bg-opacity-30 text-white py-4 rounded-xl font-bold text-lg transition">
+                        Custom
+                    </button>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                        <i class="fas fa-heart mr-2"></i>Donate Now
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transform hover:scale-105 transition-all duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- About Column -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-dove text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Global Wings</h3>
+                            <p class="text-xs text-gray-400">Charity</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Now is the time to act because every second counts, and your contribution brings us one step closer to a brighter future. Join us today and make a difference.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition">Home Page</a></li>
+                        <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition">Contact Now</a></li>
+                        <li><a href="#news" class="hover:text-primary transition">News & Blog</a></li>
+                        <li><a href="#causes" class="hover:text-primary transition">Our Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition">Religious Events</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Education Support</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Health Care Assistant</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Permanent Toilets</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Sustainable Livelihood</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope text-primary mt-1"></i>
+                            <a href="mailto:secretary@globalwingscharity.org" class="hover:text-primary transition">secretary@globalwingscharity.org</a>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>No: 104, Rajawatta, Terrace Rajamawatha, Ja ela, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-phone text-primary mt-1"></i>
+                            <div>
+                                <a href="tel:+94774832167" class="hover:text-primary transition block">+94 077 483 2167</a>
+                                <a href="tel:+447513592782" class="hover:text-primary transition block">+44 75 1359 2782</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Global Wings Charity. All Rights Reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="hover:text-primary transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary transition">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            } else {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Height of sticky nav
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            e.target.reset();
+        });
+
+        // Navbar background on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.innerText.replace(/\D/g, ''));
+            const increment = target / speed;
+            let count = 0;
+
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count) + '+';
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+
+            updateCount();
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        animateCounter(counter);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroSection = document.querySelector('#home');
+        if (heroSection) {
+            statsObserver.observe(heroSection);
+        }
+    </script>
+</body>
+  </html>
